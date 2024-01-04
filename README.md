@@ -103,5 +103,34 @@ try:
 except CloverDBError as e:
     print(e)
 
+# Вставляем данные
+try:
+    insert_query = clover_db.insert(table_name='example_table', values={'id': 1, 'name': 'John Doe'})
+    print(insert_query)
+except CloverDBError as e:
+    print(e)
+
+# Обновляем данные
+try:
+    update_query = clover_db.update(table_name='example_table', set_values={'name': 'Jane Doe'}, where={'id': 1})
+    print(update_query)
+except CloverDBError as e:
+    print(e)
+
+# Удаляем данные
+try:
+    delete_query = clover_db.delete(table_name='example_table', where={'id': 1})
+    print(delete_query)
+except CloverDBError as e:
+    print(e)
+
+# Выполняем произвольный запрос
+try:
+    custom_query_result = clover_db.execute_custom_query("SELECT * FROM example_table WHERE age > 20")
+    print(custom_query_result)
+except CloverDBError as e:
+    print(e)
+
 # Закрываем соединение
 clover_db.close()
+```
