@@ -1,6 +1,6 @@
 ## CloverDB - Database
 
-# Installing libary
+# Установка библиотеки
 
 ```sh
 pip install cloverdb
